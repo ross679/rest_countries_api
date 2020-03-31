@@ -9,7 +9,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
       body {
-        background-color: #6D4CFF;
+        background-color: #676A90;
+        color: white;
+      }
+      input {
+        display: block;
+        margin: auto;
+      }
+      #output {
+        
       }
     </style>
   </head>
@@ -17,9 +25,9 @@
 
     <div class="container">
 
-    <h1>Country Lookup</h1>
-    <h3>The application below gives an example on how an API can be implemented into web applications using the REST Countries API</h3>
-    <h4>Enter a country in the text box to query a country</h4>
+    <h1 class="text-center">Country Lookup</h1> <br>
+    <h3 class="text-center">The application below gives an example on how an API can be implemented into web applications using the REST Countries API</h3> <br>
+    <h4 class="text-center">Enter a country in the text box to query a country</h4> <br>
 
     <input id="query" onkeyup="getcountry(document.getElementById('query').value)">
 
@@ -32,7 +40,7 @@
         $.ajax({
           url:"https://restcountries.eu/rest/v2/name/"+q,
           success:function(res) {
-            document.getElementById("output").innerHTML="<h1>"+res[0].name+"<h1><br><img src='"+res[0].flag+"' width='500' /><br><p>Region: "+res[0].region+"<br> Population: "+res[0].population+"<br>Currency: "+res[0].currencies[0].name+"";
+            document.getElementById("output").innerHTML="<h1>"+res[0].name+"<h1><br><img src='"+res[0].flag+"' width='500' /><br><p>Region: "+res[0].region+"<br> Population: "+res[0].population+"<br>Currency: "+res[0].currencies[0].name+"<br> Currency code: "+res[0].currencies[0].code+"<br>Currency Symbol: "+res[0].currencies[0].symbol+"";
           }
         })
       }
