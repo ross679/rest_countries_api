@@ -7,22 +7,32 @@
           integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
           crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      body {
+        background-color: #6D4CFF;
+      }
+    </style>
   </head>
   <body>
 
+    <div class="container">
+
     <h1>Country Lookup</h1>
     <h3>The application below gives an example on how an API can be implemented into web applications using the REST Countries API</h3>
+    <h4>Enter a country in the text box to query a country</h4>
 
     <input id="query" onkeyup="getcountry(document.getElementById('query').value)">
 
     <div id="output"></div>
 
+  </div>
+
     <script>
       function getcountry(q){
         $.ajax({
-          url:"https://restcountries.eu/rest/v2/name"+q,
+          url:"https://restcountries.eu/rest/v2/name/"+q,
           success:function(res) {
-            document.getElementById("output").innerHTML="<h1>"+res[0].name+"</h1><br><img src="'+res[0].flag"'>
+            document.getElementById("output").innerHTML="<h1>"+res[0].name+"<h1><br><img src='"+res[0].flag+"' width='500' /><br><p>Region: "+res[0].region+"<br> Population: "+res[0].population+"<br>Currency: "+res[0].currencies[0].name+"";
           }
         })
       }
