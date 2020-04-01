@@ -1,0 +1,20 @@
+body {
+  background-color: #676A90;
+  color: black;
+}
+.container {
+  background-color: #eee;
+  box-shadow: 2px 2px 2px gray;
+  height: 98%;
+  padding: 10px;
+}
+input {
+  display: block;
+  margin: auto;
+  text-align: center;
+  border: none;
+}
+#output {
+  display: block;
+  margin: auto;
+}
