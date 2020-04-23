@@ -3,6 +3,7 @@ body {
   color: black;
 }
 .container {
+  margin: auto;
   background-color: #eee;
   box-shadow: 2px 2px 2px gray;
   max-height: 100%;
