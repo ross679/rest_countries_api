@@ -17,6 +17,9 @@ input {
   text-align: center;
   border: none;
 }
+input:focus {
+  border: 3px solid blue;
+}
 #output {
   display: block;
   margin: auto;
